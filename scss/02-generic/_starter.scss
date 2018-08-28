@@ -1,0 +1,28 @@
+// Taken and modified from Sakura.css https://github.com/oxalorg/sakura
+
+html {
+  font-family: $serif;
+  font-size: 62.5%; // so 1rem will equal 10px at standard zoom level
+}
+
+body {
+  background-color: get-color(light);
+  color: get-color(greys, dark);
+  font-size: 1.35rem;
+  line-height: 1.618;
+  margin: auto;
+  max-width: 66.667em;
+  padding: 2rem;
+
+  @include phone-portrait-up {
+    font-size: 1.53rem;
+  }
+
+  @include phone-landscape-up {
+    font-size: 1.66rem;
+  }
+
+  @include tablet-landscape-up {
+    font-size: 1.8rem;
+  }
+}
