@@ -17,10 +17,12 @@ class PostsList extends Component {
 
   render () {
     const posts = this.state.posts.map((item, index) => {
-      const itemLink = `/posts/${item.path}`.replace('.md', '')
-      const itemPath = `${item.path}`.replace('.md', '')
-      return <li><Link to={itemLink}>{itemPath}</Link></li>
+      const itemLink = `/posts/${item.slug}`
+      const itemTitle = item.title
+      const itemDate = item.date
+      return <li key={index}><Link to={itemLink}>{itemTitle} / {itemDate}</Link></li>
     })
+
     return (
       <div>
         {posts}

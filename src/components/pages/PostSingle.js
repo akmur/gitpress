@@ -15,7 +15,6 @@ class PostSingle extends Component {
     const slug = this.props.match.params.slug
     getPostJson(slug).then(response => {
       const meta = matter(response);
-      console.log(meta)
       const markdownToHTML = markdown.toHTML(response)
       this.setState({
         title: meta.data.title,
@@ -29,7 +28,7 @@ class PostSingle extends Component {
     return (
       <div>
         <h1>{this.state.title}</h1>
-        <date>{this.state.date}</date>
+        <div className="date">{this.state.date}</div>
         { ReactHtmlParser(this.state.content) }
       </div>
     )
